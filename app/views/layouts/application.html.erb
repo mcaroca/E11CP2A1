@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
   </head>
 
+  <header class="navbar-fixed">
+    <nav class="yellow darken-1">
+      <ul class="right" id="nav-mobile">
+        <li><a href="<%= root_path %>">Inicio</a></li>
+        <li><a href="<%= pages_landing_path%>">Landing</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
     <%= yield %>
   </body>

@@ -11,4 +11,8 @@
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="fixed-action-btn direction-top active">
+  <%= link_to students_path, class: "waves-effect waves-light btn btn-floating btn-large cyan" do %>
+    <i class="large material-icons">arrow_back_ios</i>
+  <% end %>
+</div>
