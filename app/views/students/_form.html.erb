@@ -1,27 +1,40 @@
-<%= form_with(model: student, local: true) do |form| %>
-  <% if student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+<div class="row">
+  <%= form_with(model: student, local: true) do |form| %>
+    <% if student.errors.any? %>
+      <div id="error_explanation">
+        <h3><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h3>
 
-      <ul>
-      <% student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col s12">
+        <div class="input-field col s10">
+          <i class="material-icons prefix">title</i>
+          <%= form.text_field :name, id: :student_name %>
+          <%= form.label :name, class:"active" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="input-field col s10">
+          <i class="material-icons prefix">title</i>
+          <%= form.label :age %>
+          <%= form.number_field :age, id: :student_age %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s3">
+        <%= form.submit "Create Student", class:"waves-effect waves-light btn" do %>
+          <i class="material-icons right">send</i>
+        <% end %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :student_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age, id: :student_age %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
